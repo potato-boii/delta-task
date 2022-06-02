@@ -25,7 +25,8 @@ do
 		sudo setfacl -m o::rwx "/home/$account"
 		sudo setfacl -m mask::rw "/home/$account/Current_Balance.txt"
 		sudo setfacl -m mask::rw "/home/$account/Transaction_History.txt"
-		sudo setfacl  -m u:CEO:r "/home/MANAGER$number"
+		sudo setfacl -m u:CEO:r "/home/MANAGER$number"
+		sudo setfacl -m o::--- "/home/MANAGER$number"
 	done
 done
 rm branches.txt
