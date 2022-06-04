@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 number=$(echo $USER | cut -dR -f2)
 grep "Branch$number" /etc/passwd | cut -d: -f1 > accounts.txt

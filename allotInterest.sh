@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 #run the command given below to schedule task
 #(crontab -l; echo "0 0 * * * /bin/bash /home/$USER/allotInterest.sh /home/$USER") | awk '!x[$0]++' | crontab -

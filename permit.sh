@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 grep 'ACC' /etc/passwd | awk -F ":" '{print $5}' | cut -d ',' -f 2 | sort | uniq > branches.txt
 
