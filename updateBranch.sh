@@ -9,7 +9,7 @@ for account in $(cat accounts.txt)
 do
 	cat "/home/$account/Transaction_History.txt" >> Branch_Transaction_History.txt
 	current_balance=$(cat "/home/$account/Current_Balance.txt")
-	balance=$(( $balance + $current_balance ))
+	balance=$(echo "scale=10;($balance + $current_balance)/1" | bc )
 done
 
 echo $balance > Branch_Current_Balance.txt
