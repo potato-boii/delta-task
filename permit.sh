@@ -2,7 +2,7 @@
 
 grep 'ACC' /etc/passwd | awk -F ":" '{print $5}' | cut -d ',' -f 2 | sort | uniq > branches.txt
 
-echo | awk '{print "CEO:CEO::::/home/CEO:/bin/bash"}' | sudo newusers 
+echo | awk '{print "CEO:CEO::::/home/CEO:/bin/bash"}' | newusers 
 
 for branch in $(cat branches.txt)
 do 
