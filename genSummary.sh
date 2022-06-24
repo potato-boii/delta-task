@@ -22,10 +22,10 @@
  	done
  	highest=$(sort -k2g expenditure.txt | tail -n1 | awk '{print $2}')
  	lowest=$(sort -k2g expenditure.txt | head -n1 | awk '{print $2}')
- 	if [ $highest -gt 0 ] ; then 
+ 	if [ $(echo "$highest > 0" | bc ) == 1 ] ; then 
  		grep "$highest" expenditure.txt | awk -v h=$highest 'BEGIN {ORS=" ";print "Highest increase of "h " is for the account"} {print $1} END {printf "\n"}'
  	fi
- 	if [ $lowest -lt 0 ] ; then 
+ 	if [ $(echo "$lowest < 0" | bc ) == 1 ] ; then 
  		grep -e "$lowest" expenditure.txt | awk -v l=$lowest 'BEGIN {ORS=" ";print "Highest decrease of "l " is for the account"} {print $1} END {printf "\n"}'
  	fi
  	grep "$month" branch_transaction.txt | awk 'BEGIN {sum=0} {sum += $2} END {print "Mean is "sum/NR}'
