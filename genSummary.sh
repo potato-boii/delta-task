@@ -1,5 +1,5 @@
 #!/bin/bash
- grep "MANAGER1" /etc/group | grep "ACC" | cut -dM -f2 | awk -F: '{print $1}' > accounts.txt
+ grep "$USER" /etc/group | grep "ACC" | cut -dM -f2 | awk -F: '{print $1}' > accounts.txt
  
  if [ $# -eq 0 ] ; then
  
