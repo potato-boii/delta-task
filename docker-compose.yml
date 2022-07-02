@@ -1,0 +1,11 @@
+services:
+
+  delta-container:
+  
+    build: ./server
+    
+    ports:
+      - 8080:5000
+     
+    command: bash -c "python3 /app.py && ./permit.sh"
+      
